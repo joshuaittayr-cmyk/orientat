@@ -10,68 +10,126 @@
 
 <body>
 
+<!-- 🔝 NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="index.html">OrientaT</a>
 
     <div>
       <a class="btn btn-outline-light me-2" href="areas.html">Áreas</a>
+      <a class="btn btn-outline-light me-2" href="test.html">Test</a>
       <a class="btn btn-outline-light" href="contacto.html">Contacto</a>
     </div>
   </div>
 </nav>
 
+<!-- 🧠 TEST -->
 <div class="container mt-5">
 
-<h2 class="text-center">Test Vocacional</h2>
+<h2 class="text-center">Test Vocacional PRO</h2>
 
-<form id="testForm">
+<form id="test">
 
-    <!-- Pregunta 1 -->
-    <div class="mb-3">
-        <label>1. Me gusta resolver problemas matemáticos</label><br>
-        <input type="radio" name="p1" value="1"> 1
-        <input type="radio" name="p1" value="2"> 2
-        <input type="radio" name="p1" value="3"> 3
-        <input type="radio" name="p1" value="4"> 4
-        <input type="radio" name="p1" value="5"> 5
-    </div>
+<p>1. ¿Te gusta usar computadoras o programar?</p>
+<select class="form-select" name="p1">
+  <option value="tec">Sí</option>
+  <option value="none">No</option>
+</select>
 
-    <!-- Pregunta 2 -->
-    <div class="mb-3">
-        <label>2. Me interesa ayudar a las personas</label><br>
-        <input type="radio" name="p2" value="1"> 1
-        <input type="radio" name="p2" value="2"> 2
-        <input type="radio" name="p2" value="3"> 3
-        <input type="radio" name="p2" value="4"> 4
-        <input type="radio" name="p2" value="5"> 5
-    </div>
+<p>2. ¿Te gustaría ayudar a personas enfermas?</p>
+<select class="form-select" name="p2">
+  <option value="salud">Sí</option>
+  <option value="none">No</option>
+</select>
 
-    <button type="button" class="btn btn-success" onclick="calcular()">Ver resultados</button>
+<p>3. ¿Te interesan los negocios o ventas?</p>
+<select class="form-select" name="p3">
+  <option value="negocios">Sí</option>
+  <option value="none">No</option>
+</select>
+
+<p>4. ¿Te gusta dibujar o diseñar?</p>
+<select class="form-select" name="p4">
+  <option value="creativo">Sí</option>
+  <option value="none">No</option>
+</select>
+
+<p>5. ¿Te gusta resolver problemas lógicos?</p>
+<select class="form-select" name="p5">
+  <option value="tec">Sí</option>
+  <option value="none">No</option>
+</select>
+
+<p>6. ¿Te interesa el cuerpo humano?</p>
+<select class="form-select" name="p6">
+  <option value="salud">Sí</option>
+  <option value="none">No</option>
+</select>
+
+<p>7. ¿Te gustaría tener tu propio negocio?</p>
+<select class="form-select" name="p7">
+  <option value="negocios">Sí</option>
+  <option value="none">No</option>
+</select>
+
+<p>8. ¿Te gusta la música, arte o diseño?</p>
+<select class="form-select" name="p8">
+  <option value="creativo">Sí</option>
+  <option value="none">No</option>
+</select>
+
+<br>
+
+<button type="button" class="btn btn-primary w-100" onclick="calcular()">
+Ver resultado
+</button>
 
 </form>
 
+</div>
+
+<!-- 📌 FOOTER -->
+<footer class="bg-dark text-white text-center p-3 mt-5">
+    Proyecto escolar - Orientación Vocacional
+</footer>
+
+<!-- 🧠 SCRIPT -->
 <script>
 function calcular() {
 
-    let total = 0;
+  let tec = 0;
+  let salud = 0;
+  let negocios = 0;
+  let creativo = 0;
 
-    let p1 = document.querySelector('input[name="p1"]:checked');
-    let p2 = document.querySelector('input[name="p2"]:checked');
+  let form = document.getElementById("test");
 
-    if (!p1 || !p2) {
-        alert("Contesta todas las preguntas");
-        return;
-    }
+  let respuestas = [
+    form.p1.value,
+    form.p2.value,
+    form.p3.value,
+    form.p4.value,
+    form.p5.value,
+    form.p6.value,
+    form.p7.value,
+    form.p8.value
+  ];
 
-    total += parseInt(p1.value);
-    total += parseInt(p2.value);
+  respuestas.forEach(r => {
+    if (r === "tec") tec++;
+    if (r === "salud") salud++;
+    if (r === "negocios") negocios++;
+    if (r === "creativo") creativo++;
+  });
 
-    // Guardar resultado
-    localStorage.setItem("resultado", total);
+  // Guardar resultados
+  localStorage.setItem("tec", tec);
+  localStorage.setItem("salud", salud);
+  localStorage.setItem("negocios", negocios);
+  localStorage.setItem("creativo", creativo);
 
-    // Ir a resultados
-    window.location.href = "resultados.html";
+  // Ir a resultados
+  window.location.href = "resultado.html";
 }
 </script>
 
