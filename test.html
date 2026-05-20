@@ -1,46 +1,27 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test Vocacional</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-body{
-    background: linear-gradient(135deg, #141e30, #243b55);
-    color:white;
-    font-family: Arial;
+body {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
 }
 
-.card{
-    background:#1f2a40;
-    border:none;
-    border-radius:15px;
-}
-
-button{
-    border-radius:10px !important;
-}
-
-.barra{
-    background:#ccc;
-    border-radius:10px;
-    margin-bottom:10px;
-}
-
-.relleno{
-    background:#00c6ff;
-    padding:6px;
-    border-radius:10px;
-    font-size:12px;
-    color:black;
+.card {
+    border-radius: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- 🔥 LOGO -->
 <nav class="navbar navbar-dark bg-dark px-3">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="logo.PNG" width="50" class="me-2" style="border-radius:10px;">
@@ -54,109 +35,131 @@ button{
 
 <form id="testForm">
 
-<!-- PREGUNTAS (10) -->
-
-<!-- SOLO TE PONGO 1 COMPLETA Y LAS DEMÁS SIGUEN IGUAL -->
-
+<!-- 1 -->
 <div class="card p-3 mb-3">
 <p>1. ¿Qué actividad disfrutas más?</p>
 <select class="form-select" name="p1">
-<option value="tecnologia">Programar</option>
-<option value="salud">Ayudar personas</option>
-<option value="arte">Dibujar</option>
-<option value="negocios">Vender</option>
-<option value="deportes">Ejercicio</option>
+<option value="tecnologia">Programar o usar tecnología</option>
+<option value="salud">Ayudar a personas</option>
+<option value="arte">Dibujar o crear</option>
+<option value="negocios">Vender o emprender</option>
+<option value="deportes">Hacer ejercicio</option>
 </select>
 </div>
 
-<div class="card p-3 mb-3"><p>2. ¿Qué materia te gusta más?</p>
+<!-- 2 -->
+<div class="card p-3 mb-3">
+<p>2. ¿Qué materia te gusta más?</p>
 <select class="form-select" name="p2">
 <option value="tecnologia">Matemáticas</option>
 <option value="salud">Biología</option>
 <option value="arte">Arte</option>
 <option value="negocios">Economía</option>
 <option value="deportes">Educación física</option>
-</select></div>
+</select>
+</div>
 
-<div class="card p-3 mb-3"><p>3. ¿Cómo te describen?</p>
+<!-- 3 -->
+<div class="card p-3 mb-3">
+<p>3. ¿Cómo te describen?</p>
 <select class="form-select" name="p3">
 <option value="tecnologia">Analítico</option>
 <option value="salud">Empático</option>
 <option value="arte">Creativo</option>
 <option value="negocios">Líder</option>
 <option value="deportes">Activo</option>
-</select></div>
+</select>
+</div>
 
-<div class="card p-3 mb-3"><p>4. ¿Qué harías en tu tiempo libre?</p>
+<!-- 4 -->
+<div class="card p-3 mb-3">
+<p>4. ¿Qué harías en tu tiempo libre?</p>
 <select class="form-select" name="p4">
-<option value="tecnologia">Computadora</option>
-<option value="salud">Ayudar gente</option>
-<option value="arte">Pintar</option>
-<option value="negocios">Emprender</option>
+<option value="tecnologia">Estar en la computadora</option>
+<option value="salud">Ayudar a otros</option>
+<option value="arte">Pintar o diseñar</option>
+<option value="negocios">Crear ideas de negocio</option>
 <option value="deportes">Entrenar</option>
-</select></div>
+</select>
+</div>
 
-<div class="card p-3 mb-3"><p>5. ¿Qué prefieres?</p>
+<!-- 5 -->
+<div class="card p-3 mb-3">
+<p>5. ¿Qué prefieres hacer?</p>
 <select class="form-select" name="p5">
-<option value="tecnologia">Crear apps</option>
-<option value="salud">Salvar vidas</option>
-<option value="arte">Diseñar</option>
+<option value="tecnologia">Crear apps o páginas</option>
+<option value="salud">Cuidar personas</option>
+<option value="arte">Diseñar cosas</option>
 <option value="negocios">Ganar dinero</option>
 <option value="deportes">Competir</option>
-</select></div>
+</select>
+</div>
 
-<div class="card p-3 mb-3"><p>6. ¿Dónde trabajarías?</p>
+<!-- 6 -->
+<div class="card p-3 mb-3">
+<p>6. ¿Dónde te gustaría trabajar?</p>
 <select class="form-select" name="p6">
-<option value="tecnologia">Empresa tech</option>
+<option value="tecnologia">Empresa tecnológica</option>
 <option value="salud">Hospital</option>
 <option value="arte">Estudio creativo</option>
-<option value="negocios">Oficina</option>
-<option value="deportes">Gimnasio</option>
-</select></div>
+<option value="negocios">Oficina o empresa</option>
+<option value="deportes">Gimnasio o campo deportivo</option>
+</select>
+</div>
 
-<div class="card p-3 mb-3"><p>7. ¿Qué te motiva?</p>
+<!-- 7 -->
+<div class="card p-3 mb-3">
+<p>7. ¿Qué te motiva más?</p>
 <select class="form-select" name="p7">
 <option value="tecnologia">Innovar</option>
 <option value="salud">Ayudar</option>
 <option value="arte">Expresarte</option>
-<option value="negocios">Éxito</option>
+<option value="negocios">Tener éxito</option>
 <option value="deportes">Superarte</option>
-</select></div>
+</select>
+</div>
 
-<div class="card p-3 mb-3"><p>8. ¿Qué tipo de problemas te gustan?</p>
+<!-- 8 -->
+<div class="card p-3 mb-3">
+<p>8. ¿Qué tipo de problemas te gustan?</p>
 <select class="form-select" name="p8">
 <option value="tecnologia">Lógicos</option>
 <option value="salud">Humanos</option>
 <option value="arte">Creativos</option>
 <option value="negocios">Estrategia</option>
 <option value="deportes">Físicos</option>
-</select></div>
+</select>
+</div>
 
-<div class="card p-3 mb-3"><p>9. ¿Qué te interesa más?</p>
+<!-- 9 -->
+<div class="card p-3 mb-3">
+<p>9. ¿Qué te interesa más?</p>
 <select class="form-select" name="p9">
-<option value="tecnologia">Software</option>
+<option value="tecnologia">Software y tecnología</option>
 <option value="salud">Medicina</option>
 <option value="arte">Diseño</option>
 <option value="negocios">Empresas</option>
 <option value="deportes">Fitness</option>
-</select></div>
+</select>
+</div>
 
-<div class="card p-3 mb-3"><p>10. ¿Qué te ves haciendo en el futuro?</p>
+<!-- 10 -->
+<div class="card p-3 mb-3">
+<p>10. ¿Cómo te ves en el futuro?</p>
 <select class="form-select" name="p10">
-<option value="tecnologia">Desarrollando tecnología</option>
+<option value="tecnologia">Creando tecnología</option>
 <option value="salud">Ayudando personas</option>
 <option value="arte">Creando arte</option>
-<option value="negocios">Dirigiendo empresa</option>
-<option value="deportes">Entrenando</option>
-</select></div>
+<option value="negocios">Dirigiendo negocios</option>
+<option value="deportes">Entrenando o compitiendo</option>
+</select>
+</div>
 
 <button type="button" class="btn btn-primary w-100 mt-3" onclick="calcularResultado()">
 Ver resultado
 </button>
 
 </form>
-
-<div id="resultado" class="mt-4 text-center"></div>
 
 </div>
 
@@ -179,63 +182,16 @@ for(let i=1; i<=10; i++){
     puntos[valor]++;
 }
 
-let total = 10;
-
-let porcentajes = {};
-for(let area in puntos){
-    porcentajes[area] = Math.round((puntos[area]/total)*100);
-}
-
+// obtener resultado
 let resultado = Object.keys(puntos).reduce((a,b)=>
     puntos[a] > puntos[b] ? a : b
 );
 
-let info = {
-    tecnologia:{
-        titulo:"💻 Tecnología",
-        texto:"Te gusta la lógica y las computadoras.",
-        recomendacion:"Carreras: Programación, Sistemas, Software."
-    },
-    salud:{
-        titulo:"🩺 Salud",
-        texto:"Te gusta ayudar a las personas.",
-        recomendacion:"Carreras: Medicina, Enfermería, Psicología."
-    },
-    arte:{
-        titulo:"🎨 Arte",
-        texto:"Eres creativo y expresivo.",
-        recomendacion:"Carreras: Diseño, Animación, Música."
-    },
-    negocios:{
-        titulo:"💼 Negocios",
-        texto:"Te gusta liderar y emprender.",
-        recomendacion:"Carreras: Administración, Marketing."
-    },
-    deportes:{
-        titulo:"🏃 Deportes",
-        texto:"Te gusta la actividad física.",
-        recomendacion:"Carreras: Entrenador, Educación física."
-    }
-};
+// guardar resultado
+localStorage.setItem("resultado", resultado);
 
-let html = `
-<h2>${info[resultado].titulo}</h2>
-<p>${info[resultado].texto}</p>
-<p><strong>${info[resultado].recomendacion}</strong></p>
-
-<h4 class="mt-4">📊 Porcentaje por área:</h4>
-`;
-
-for(let area in porcentajes){
-    html += `
-    <p>${area}: ${porcentajes[area]}%</p>
-    <div class="barra">
-        <div class="relleno" style="width:${porcentajes[area]}%"></div>
-    </div>
-    `;
-}
-
-document.getElementById("resultado").innerHTML = html;
+// ir a resultados
+window.location.href = "resultado.html";
 
 }
 
