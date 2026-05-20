@@ -2,212 +2,242 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test Vocacional</title>
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-body {
-    background: linear-gradient(to right, #667eea, #764ba2);
-    color: white;
+body{
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color:white;
+    font-family: Arial;
 }
 
-.container-box {
-    background: rgba(255,255,255,0.1);
-    padding: 30px;
-    border-radius: 15px;
-    margin-top: 50px;
+.card{
+    background:#1f2a40;
+    border:none;
+    border-radius:15px;
 }
 
-.btn-option {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
+button{
+    border-radius:10px !important;
 }
 
+.barra{
+    background:#ccc;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.relleno{
+    background:#00c6ff;
+    padding:6px;
+    border-radius:10px;
+    font-size:12px;
+    color:black;
+}
 </style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-dark bg-dark">
-<div class="container">
-<a class="navbar-brand d-flex align-items-center" href="index.html">
-    <img src="logo.PNG" width="50" class="me-2" style="border-radius:10px;">
-    OrientaT
-</a>
-</div>
+<nav class="navbar navbar-dark bg-dark px-3">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo.PNG" width="50" class="me-2" style="border-radius:10px;">
+        <span style="font-weight:600; font-size:1.3rem;">OrientaT</span>
+    </a>
 </nav>
 
-<div class="container">
+<div class="container mt-4">
 
-<div class="container-box text-center">
+<h2 class="text-center mb-4">Test Vocacional</h2>
 
-<h2 id="pregunta">Pregunta</h2>
+<form id="testForm">
 
-<div id="opciones"></div>
+<!-- PREGUNTAS (10) -->
 
-<button onclick="siguientePregunta()" class="btn btn-light mt-3">
-Siguiente
+<!-- SOLO TE PONGO 1 COMPLETA Y LAS DEMÁS SIGUEN IGUAL -->
+
+<div class="card p-3 mb-3">
+<p>1. ¿Qué actividad disfrutas más?</p>
+<select class="form-select" name="p1">
+<option value="tecnologia">Programar</option>
+<option value="salud">Ayudar personas</option>
+<option value="arte">Dibujar</option>
+<option value="negocios">Vender</option>
+<option value="deportes">Ejercicio</option>
+</select>
+</div>
+
+<div class="card p-3 mb-3"><p>2. ¿Qué materia te gusta más?</p>
+<select class="form-select" name="p2">
+<option value="tecnologia">Matemáticas</option>
+<option value="salud">Biología</option>
+<option value="arte">Arte</option>
+<option value="negocios">Economía</option>
+<option value="deportes">Educación física</option>
+</select></div>
+
+<div class="card p-3 mb-3"><p>3. ¿Cómo te describen?</p>
+<select class="form-select" name="p3">
+<option value="tecnologia">Analítico</option>
+<option value="salud">Empático</option>
+<option value="arte">Creativo</option>
+<option value="negocios">Líder</option>
+<option value="deportes">Activo</option>
+</select></div>
+
+<div class="card p-3 mb-3"><p>4. ¿Qué harías en tu tiempo libre?</p>
+<select class="form-select" name="p4">
+<option value="tecnologia">Computadora</option>
+<option value="salud">Ayudar gente</option>
+<option value="arte">Pintar</option>
+<option value="negocios">Emprender</option>
+<option value="deportes">Entrenar</option>
+</select></div>
+
+<div class="card p-3 mb-3"><p>5. ¿Qué prefieres?</p>
+<select class="form-select" name="p5">
+<option value="tecnologia">Crear apps</option>
+<option value="salud">Salvar vidas</option>
+<option value="arte">Diseñar</option>
+<option value="negocios">Ganar dinero</option>
+<option value="deportes">Competir</option>
+</select></div>
+
+<div class="card p-3 mb-3"><p>6. ¿Dónde trabajarías?</p>
+<select class="form-select" name="p6">
+<option value="tecnologia">Empresa tech</option>
+<option value="salud">Hospital</option>
+<option value="arte">Estudio creativo</option>
+<option value="negocios">Oficina</option>
+<option value="deportes">Gimnasio</option>
+</select></div>
+
+<div class="card p-3 mb-3"><p>7. ¿Qué te motiva?</p>
+<select class="form-select" name="p7">
+<option value="tecnologia">Innovar</option>
+<option value="salud">Ayudar</option>
+<option value="arte">Expresarte</option>
+<option value="negocios">Éxito</option>
+<option value="deportes">Superarte</option>
+</select></div>
+
+<div class="card p-3 mb-3"><p>8. ¿Qué tipo de problemas te gustan?</p>
+<select class="form-select" name="p8">
+<option value="tecnologia">Lógicos</option>
+<option value="salud">Humanos</option>
+<option value="arte">Creativos</option>
+<option value="negocios">Estrategia</option>
+<option value="deportes">Físicos</option>
+</select></div>
+
+<div class="card p-3 mb-3"><p>9. ¿Qué te interesa más?</p>
+<select class="form-select" name="p9">
+<option value="tecnologia">Software</option>
+<option value="salud">Medicina</option>
+<option value="arte">Diseño</option>
+<option value="negocios">Empresas</option>
+<option value="deportes">Fitness</option>
+</select></div>
+
+<div class="card p-3 mb-3"><p>10. ¿Qué te ves haciendo en el futuro?</p>
+<select class="form-select" name="p10">
+<option value="tecnologia">Desarrollando tecnología</option>
+<option value="salud">Ayudando personas</option>
+<option value="arte">Creando arte</option>
+<option value="negocios">Dirigiendo empresa</option>
+<option value="deportes">Entrenando</option>
+</select></div>
+
+<button type="button" class="btn btn-primary w-100 mt-3" onclick="calcularResultado()">
+Ver resultado
 </button>
 
-</div>
+</form>
+
+<div id="resultado" class="mt-4 text-center"></div>
 
 </div>
 
 <script>
 
-// AREAS
+function calcularResultado(){
+
+let respuestas = document.forms["testForm"];
+
 let puntos = {
-    tecnologia: 0,
-    salud: 0,
-    arte: 0,
-    negocios: 0,
-    deportes: 0
+    tecnologia:0,
+    salud:0,
+    arte:0,
+    negocios:0,
+    deportes:0
 };
 
-// BONUS si viene de areas
-let areaGuardada = localStorage.getItem("areaSeleccionada");
-if(areaGuardada){
-    puntos[areaGuardada] += 2;
+for(let i=1; i<=10; i++){
+    let valor = respuestas["p"+i].value;
+    puntos[valor]++;
 }
 
-// PREGUNTAS
-let preguntas = [
-{
-pregunta: "¿Que actividad disfrutas mas?",
-opciones: [
-{texto:"Programar o usar tecnologia", area:"tecnologia"},
-{texto:"Ayudar personas", area:"salud"},
-{texto:"Dibujar o crear", area:"arte"},
-{texto:"Vender o liderar", area:"negocios"},
-{texto:"Hacer ejercicio", area:"deportes"}
-]
-},
-{
-pregunta: "¿Como te describen?",
-opciones: [
-{texto:"Logico", area:"tecnologia"},
-{texto:"Empatico", area:"salud"},
-{texto:"Creativo", area:"arte"},
-{texto:"Lider", area:"negocios"},
-{texto:"Activo", area:"deportes"}
-]
-},
-{
-pregunta: "¿Que te gusta ver?",
-opciones: [
-{texto:"Innovaciones tecnologicas", area:"tecnologia"},
-{texto:"Temas de salud", area:"salud"},
-{texto:"Arte o diseño", area:"arte"},
-{texto:"Negocios o dinero", area:"negocios"},
-{texto:"Deportes", area:"deportes"}
-]
-},
-{
-pregunta: "¿Que prefieres hacer en tu tiempo libre?",
-opciones: [
-{texto:"Programar", area:"tecnologia"},
-{texto:"Cuidar a otros", area:"salud"},
-{texto:"Crear contenido", area:"arte"},
-{texto:"Emprender", area:"negocios"},
-{texto:"Entrenar", area:"deportes"}
-]
-},
-{
-pregunta: "¿Que te motiva?",
-opciones: [
-{texto:"Innovar", area:"tecnologia"},
-{texto:"Ayudar", area:"salud"},
-{texto:"Expresarte", area:"arte"},
-{texto:"Ganar dinero", area:"negocios"},
-{texto:"Competir", area:"deportes"}
-]
-}
-];
+let total = 10;
 
-// CONTROL
-let index = 0;
-let seleccion = null;
-
-function mostrarPregunta(){
-    let p = preguntas[index];
-    document.getElementById("pregunta").innerText = p.pregunta;
-
-    let opcionesHTML = "";
-
-    p.opciones.forEach((op, i)=>{
-        opcionesHTML += `
-        <button class="btn btn-outline-light btn-option"
-        onclick="seleccionar('${op.area}')">
-        ${op.texto}
-        </button>
-        `;
-    });
-
-    document.getElementById("opciones").innerHTML = opcionesHTML;
+let porcentajes = {};
+for(let area in puntos){
+    porcentajes[area] = Math.round((puntos[area]/total)*100);
 }
 
-function seleccionar(area){
-    seleccion = area;
-}
+let resultado = Object.keys(puntos).reduce((a,b)=>
+    puntos[a] > puntos[b] ? a : b
+);
 
-function siguientePregunta(){
-
-    if(!seleccion){
-        alert("Selecciona una opcion");
-        return;
+let info = {
+    tecnologia:{
+        titulo:"💻 Tecnología",
+        texto:"Te gusta la lógica y las computadoras.",
+        recomendacion:"Carreras: Programación, Sistemas, Software."
+    },
+    salud:{
+        titulo:"🩺 Salud",
+        texto:"Te gusta ayudar a las personas.",
+        recomendacion:"Carreras: Medicina, Enfermería, Psicología."
+    },
+    arte:{
+        titulo:"🎨 Arte",
+        texto:"Eres creativo y expresivo.",
+        recomendacion:"Carreras: Diseño, Animación, Música."
+    },
+    negocios:{
+        titulo:"💼 Negocios",
+        texto:"Te gusta liderar y emprender.",
+        recomendacion:"Carreras: Administración, Marketing."
+    },
+    deportes:{
+        titulo:"🏃 Deportes",
+        texto:"Te gusta la actividad física.",
+        recomendacion:"Carreras: Entrenador, Educación física."
     }
+};
 
-    puntos[seleccion]++;
+let html = `
+<h2>${info[resultado].titulo}</h2>
+<p>${info[resultado].texto}</p>
+<p><strong>${info[resultado].recomendacion}</strong></p>
 
-    seleccion = null;
-    index++;
+<h4 class="mt-4">📊 Porcentaje por área:</h4>
+`;
 
-    if(index < preguntas.length){
-        mostrarPregunta();
-    }else{
-        mostrarResultado();
-    }
-}
-
-function mostrarResultado(){
-
-    let resultado = Object.keys(puntos).reduce((a,b)=>
-        puntos[a] > puntos[b] ? a : b
-    );
-
-    let texto = "";
-
-    switch(resultado){
-        case "tecnologia":
-            texto = "Te orientas a Tecnologia 💻";
-            break;
-        case "salud":
-            texto = "Te orientas a Salud 🏥";
-            break;
-        case "arte":
-            texto = "Te orientas a Arte 🎨";
-            break;
-        case "negocios":
-            texto = "Te orientas a Negocios 💼";
-            break;
-        case "deportes":
-            texto = "Te orientas a Deportes ⚽";
-            break;
-    }
-
-    document.querySelector(".container-box").innerHTML = `
-        <h2>${texto}</h2>
-        <p class="mt-3">Esta area coincide con tus intereses</p>
-        <a href="areas.html" class="btn btn-light mt-3">Ver Areas</a>
+for(let area in porcentajes){
+    html += `
+    <p>${area}: ${porcentajes[area]}%</p>
+    <div class="barra">
+        <div class="relleno" style="width:${porcentajes[area]}%"></div>
+    </div>
     `;
 }
 
-// INICIO
-mostrarPregunta();
+document.getElementById("resultado").innerHTML = html;
+
+}
 
 </script>
 
