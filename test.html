@@ -15,16 +15,17 @@ body {
 
 .card {
     border-radius: 15px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.02);
 }
 
 .btn-option {
     width: 100%;
     margin-top: 10px;
+    transition: 0.2s;
+}
+
+.selected {
+    background-color: #764ba2 !important;
+    color: white !important;
 }
 
 </style>
@@ -32,7 +33,6 @@ body {
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark bg-dark">
 <div class="container">
 <a class="navbar-brand" href="index.html">🧭 OrientaT</a>
@@ -40,30 +40,91 @@ body {
 </nav>
 
 <div class="container mt-5">
-
 <div class="card p-4 shadow text-dark">
 
 <h3 class="text-center mb-4">🧠 Test Vocacional</h3>
 
-<form id="testForm">
+<form>
 
-<!-- PREGUNTA 1 -->
+<!-- P1 -->
 <p>1. ¿Qué actividad disfrutas más?</p>
-<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('tecnologia')">💻 Programar o usar tecnología</button>
-<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('salud')">🏥 Ayudar a personas</button>
-<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('arte')">🎨 Dibujar o crear</button>
+<div id="p1">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(1,'tecnologia',this)">💻 Programar</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(1,'salud',this)">🏥 Ayudar personas</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(1,'arte',this)">🎨 Crear arte</button>
+</div>
 
-<!-- PREGUNTA 2 -->
-<p class="mt-4">2. ¿Qué te interesa más?</p>
-<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('tecnologia')">🤖 Innovación</button>
-<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('salud')">🧬 Biología</button>
-<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('arte')">🎭 Expresión artística</button>
+<!-- P2 -->
+<p class="mt-4">2. ¿Qué materia te gusta más?</p>
+<div id="p2">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(2,'tecnologia',this)">📊 Matemáticas</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(2,'salud',this)">🧬 Biología</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(2,'arte',this)">🎭 Artes</button>
+</div>
 
-<!-- PREGUNTA 3 -->
-<p class="mt-4">3. ¿Cómo te describes?</p>
-<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('tecnologia')">🔍 Analítico</button>
-<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('salud')">🤝 Empático</button>
-<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('arte')">✨ Creativo</button>
+<!-- P3 -->
+<p class="mt-4">3. ¿Cómo te describen?</p>
+<div id="p3">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(3,'tecnologia',this)">🔍 Analítico</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(3,'salud',this)">🤝 Empático</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(3,'arte',this)">✨ Creativo</button>
+</div>
+
+<!-- P4 -->
+<p class="mt-4">4. ¿Qué tipo de videos prefieres?</p>
+<div id="p4">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(4,'tecnologia',this)">🤖 Tecnología</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(4,'salud',this)">🏥 Medicina</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(4,'arte',this)">🎨 Arte</button>
+</div>
+
+<!-- P5 -->
+<p class="mt-4">5. ¿Qué trabajo te llama más?</p>
+<div id="p5">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(5,'tecnologia',this)">💻 Programador</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(5,'salud',this)">👨‍⚕️ Doctor</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(5,'arte',this)">🎨 Diseñador</button>
+</div>
+
+<!-- P6 -->
+<p class="mt-4">6. ¿Qué te gustaría aprender?</p>
+<div id="p6">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(6,'tecnologia',this)">💻 Programación</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(6,'salud',this)">🧠 Medicina</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(6,'arte',this)">🎨 Diseño</button>
+</div>
+
+<!-- P7 -->
+<p class="mt-4">7. ¿Cómo prefieres trabajar?</p>
+<div id="p7">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(7,'tecnologia',this)">💻 Computadora</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(7,'salud',this)">👥 Con personas</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(7,'arte',this)">🎨 Creando cosas</button>
+</div>
+
+<!-- P8 -->
+<p class="mt-4">8. ¿Qué te parece más interesante?</p>
+<div id="p8">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(8,'tecnologia',this)">🤖 Inteligencia Artificial</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(8,'salud',this)">🧬 Cuerpo humano</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(8,'arte',this)">🎭 Expresión artística</button>
+</div>
+
+<!-- P9 -->
+<p class="mt-4">9. ¿Qué te motiva más?</p>
+<div id="p9">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(9,'tecnologia',this)">🚀 Innovar</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(9,'salud',this)">❤️ Ayudar</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(9,'arte',this)">✨ Crear</button>
+</div>
+
+<!-- P10 -->
+<p class="mt-4">10. ¿Qué elegirías?</p>
+<div id="p10">
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(10,'tecnologia',this)">💻 Desarrollar apps</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(10,'salud',this)">🏥 Hospital</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="seleccionar(10,'arte',this)">🎨 Crear contenido</button>
+</div>
 
 </form>
 
@@ -72,24 +133,37 @@ body {
 </div>
 
 </div>
-
 </div>
 
 <script>
-let respuestas = [];
+let respuestas = {};
 
-function responder(area){
-    respuestas.push(area);
+function seleccionar(pregunta, area, boton){
+
+    respuestas[pregunta] = area;
+
+    let opciones = document.querySelectorAll("#p" + pregunta + " button");
+    opciones.forEach(btn => btn.classList.remove("selected"));
+
+    boton.classList.add("selected");
 }
 
 function verResultado(){
+
+    if(Object.keys(respuestas).length < 10){
+        alert("Contesta todas las preguntas 😡");
+        return;
+    }
+
     let conteo = {
         tecnologia: 0,
         salud: 0,
         arte: 0
     };
 
-    respuestas.forEach(r => conteo[r]++);
+    for(let key in respuestas){
+        conteo[respuestas[key]]++;
+    }
 
     let resultado = Object.keys(conteo).reduce((a, b) => conteo[a] > conteo[b] ? a : b);
 
