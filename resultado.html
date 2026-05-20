@@ -1,60 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resultado</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-body {
-    background: linear-gradient(to right, #667eea, #764ba2);
-    color: white;
-    text-align: center;
-}
-
-.card {
-    border-radius: 20px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-.emoji {
-    font-size: 60px;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container mt-5">
-
-<div class="card p-5 shadow text-dark">
-
-<div id="resultado"></div>
-
-<button class="btn btn-primary mt-4" onclick="reiniciar()">🔄 Volver a intentar</button>
-
-</div>
-
-</div>
-
 <script>
 let resultado = localStorage.getItem("resultado");
 
 let contenido = "";
 
+// TECNOLOGÍA
 if(resultado === "tecnologia"){
     contenido = `
     <div class="emoji">💻🚀</div>
     <h2>ERES TECNOLOGÍA</h2>
-    <p>Te encanta resolver problemas, usar computadoras y crear soluciones digitales.</p>
+    <p>Te encanta resolver problemas, usar computadoras y entender cómo funcionan las cosas.</p>
+
+    <h4>🧠 Tu perfil:</h4>
+    <p>Eres lógico, analítico y te adaptas bien a nuevas tecnologías.</p>
 
     <h4>🎓 Carreras recomendadas:</h4>
     <ul>
@@ -68,11 +25,15 @@ if(resultado === "tecnologia"){
     `;
 }
 
+// SALUD
 else if(resultado === "salud"){
     contenido = `
     <div class="emoji">🏥❤️</div>
     <h2>ERES SALUD</h2>
     <p>Tienes vocación de ayudar y te interesa el bienestar de las personas.</p>
+
+    <h4>🧠 Tu perfil:</h4>
+    <p>Eres empático, paciente y te importa el bienestar de otros.</p>
 
     <h4>🎓 Carreras recomendadas:</h4>
     <ul>
@@ -82,15 +43,19 @@ else if(resultado === "salud"){
     </ul>
 
     <h4>💡 Consejo:</h4>
-    <p>Refuerza materias como biología y química, y busca aprender sobre el cuerpo humano.</p>
+    <p>Refuerza biología y química, y aprende sobre el cuerpo humano.</p>
     `;
 }
 
+// ARTE
 else if(resultado === "arte"){
     contenido = `
     <div class="emoji">🎨✨</div>
     <h2>ERES ARTE</h2>
     <p>Eres creativo, te gusta expresarte y crear cosas únicas.</p>
+
+    <h4>🧠 Tu perfil:</h4>
+    <p>Tienes imaginación, estilo propio y sensibilidad artística.</p>
 
     <h4>🎓 Carreras recomendadas:</h4>
     <ul>
@@ -100,7 +65,59 @@ else if(resultado === "arte"){
     </ul>
 
     <h4>💡 Consejo:</h4>
-    <p>Practica dibujo, edición o diseño digital usando herramientas como Photoshop o Illustrator.</p>
+    <p>Practica dibujo o diseño digital con herramientas como Photoshop o Illustrator.</p>
+    `;
+}
+
+// NEGOCIOS
+else if(resultado === "negocios"){
+    contenido = `
+    <div class="emoji">💼📈</div>
+    <h2>ERES NEGOCIOS</h2>
+    <p>Te gusta liderar, tomar decisiones y generar oportunidades.</p>
+
+    <h4>🧠 Tu perfil:</h4>
+    <p>Eres estratégico, competitivo y tienes mentalidad de crecimiento.</p>
+
+    <h4>🎓 Carreras recomendadas:</h4>
+    <ul>
+        <li>Administración de Empresas</li>
+        <li>Marketing</li>
+        <li>Finanzas</li>
+    </ul>
+
+    <h4>💡 Consejo:</h4>
+    <p>Empieza con ideas de negocio, ventas o aprende sobre inversiones.</p>
+    `;
+}
+
+// DEPORTES
+else if(resultado === "deportes"){
+    contenido = `
+    <div class="emoji">🏃🔥</div>
+    <h2>ERES DEPORTES</h2>
+    <p>Te gusta la actividad física, competir y superarte constantemente.</p>
+
+    <h4>🧠 Tu perfil:</h4>
+    <p>Eres disciplinado, activo y te gusta mejorar día a día.</p>
+
+    <h4>🎓 Carreras recomendadas:</h4>
+    <ul>
+        <li>Educación Física</li>
+        <li>Entrenador Deportivo</li>
+        <li>Nutrición Deportiva</li>
+    </ul>
+
+    <h4>💡 Consejo:</h4>
+    <p>Mantente activo y aprende sobre entrenamiento y salud física.</p>
+    `;
+}
+
+// SI NO HAY RESULTADO (ERROR)
+else{
+    contenido = `
+    <h3>No se encontró resultado 😅</h3>
+    <p>Vuelve a hacer el test.</p>
     `;
 }
 
@@ -111,6 +128,3 @@ function reiniciar(){
     window.location.href = "test.html";
 }
 </script>
-
-</body>
-</html>
