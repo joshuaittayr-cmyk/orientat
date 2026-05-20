@@ -1,135 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Vocacional</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Vocacional</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+}
+
+.card {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.btn-option {
+    width: 100%;
+    margin-top: 10px;
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- 🔝 NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">OrientaT</a>
-
-    <div>
-      <a class="btn btn-outline-light me-2" href="areas.html">Áreas</a>
-      <a class="btn btn-outline-light me-2" href="test.html">Test</a>
-      <a class="btn btn-outline-light" href="contacto.html">Contacto</a>
-    </div>
-  </div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark">
+<div class="container">
+<a class="navbar-brand" href="index.html">🧭 OrientaT</a>
+</div>
 </nav>
 
-<!-- 🧠 TEST -->
 <div class="container mt-5">
 
-<h2 class="text-center">Test Vocacional PRO</h2>
+<div class="card p-4 shadow text-dark">
 
-<form id="test">
+<h3 class="text-center mb-4">🧠 Test Vocacional</h3>
 
-<p>1. ¿Te gusta usar computadoras o programar?</p>
-<select class="form-select" name="p1">
-  <option value="tec">Sí</option>
-  <option value="none">No</option>
-</select>
+<form id="testForm">
 
-<p>2. ¿Te gustaría ayudar a personas enfermas?</p>
-<select class="form-select" name="p2">
-  <option value="salud">Sí</option>
-  <option value="none">No</option>
-</select>
+<!-- PREGUNTA 1 -->
+<p>1. ¿Qué actividad disfrutas más?</p>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('tecnologia')">💻 Programar o usar tecnología</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('salud')">🏥 Ayudar a personas</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('arte')">🎨 Dibujar o crear</button>
 
-<p>3. ¿Te interesan los negocios o ventas?</p>
-<select class="form-select" name="p3">
-  <option value="negocios">Sí</option>
-  <option value="none">No</option>
-</select>
+<!-- PREGUNTA 2 -->
+<p class="mt-4">2. ¿Qué te interesa más?</p>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('tecnologia')">🤖 Innovación</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('salud')">🧬 Biología</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('arte')">🎭 Expresión artística</button>
 
-<p>4. ¿Te gusta dibujar o diseñar?</p>
-<select class="form-select" name="p4">
-  <option value="creativo">Sí</option>
-  <option value="none">No</option>
-</select>
-
-<p>5. ¿Te gusta resolver problemas lógicos?</p>
-<select class="form-select" name="p5">
-  <option value="tec">Sí</option>
-  <option value="none">No</option>
-</select>
-
-<p>6. ¿Te interesa el cuerpo humano?</p>
-<select class="form-select" name="p6">
-  <option value="salud">Sí</option>
-  <option value="none">No</option>
-</select>
-
-<p>7. ¿Te gustaría tener tu propio negocio?</p>
-<select class="form-select" name="p7">
-  <option value="negocios">Sí</option>
-  <option value="none">No</option>
-</select>
-
-<p>8. ¿Te gusta la música, arte o diseño?</p>
-<select class="form-select" name="p8">
-  <option value="creativo">Sí</option>
-  <option value="none">No</option>
-</select>
-
-<br>
-
-<button type="button" class="btn btn-primary w-100" onclick="calcular()">
-Ver resultado
-</button>
+<!-- PREGUNTA 3 -->
+<p class="mt-4">3. ¿Cómo te describes?</p>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('tecnologia')">🔍 Analítico</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('salud')">🤝 Empático</button>
+<button type="button" class="btn btn-outline-primary btn-option" onclick="responder('arte')">✨ Creativo</button>
 
 </form>
 
+<div class="text-center mt-4">
+<button class="btn btn-success" onclick="verResultado()">Ver resultado</button>
 </div>
 
-<!-- 📌 FOOTER -->
-<footer class="bg-dark text-white text-center p-3 mt-5">
-    Proyecto escolar - Orientación Vocacional
-</footer>
+</div>
 
-<!-- 🧠 SCRIPT -->
+</div>
+
 <script>
-function calcular() {
+let respuestas = [];
 
-  let tec = 0;
-  let salud = 0;
-  let negocios = 0;
-  let creativo = 0;
+function responder(area){
+    respuestas.push(area);
+}
 
-  let form = document.getElementById("test");
+function verResultado(){
+    let conteo = {
+        tecnologia: 0,
+        salud: 0,
+        arte: 0
+    };
 
-  let respuestas = [
-    form.p1.value,
-    form.p2.value,
-    form.p3.value,
-    form.p4.value,
-    form.p5.value,
-    form.p6.value,
-    form.p7.value,
-    form.p8.value
-  ];
+    respuestas.forEach(r => conteo[r]++);
 
-  respuestas.forEach(r => {
-    if (r === "tec") tec++;
-    if (r === "salud") salud++;
-    if (r === "negocios") negocios++;
-    if (r === "creativo") creativo++;
-  });
+    let resultado = Object.keys(conteo).reduce((a, b) => conteo[a] > conteo[b] ? a : b);
 
-  // Guardar resultados
-  localStorage.setItem("tec", tec);
-  localStorage.setItem("salud", salud);
-  localStorage.setItem("negocios", negocios);
-  localStorage.setItem("creativo", creativo);
+    localStorage.setItem("resultado", resultado);
 
-  // Ir a resultados
-  window.location.href = "resultado.html";
+    window.location.href = "resultado.html";
 }
 </script>
 
