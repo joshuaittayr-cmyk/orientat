@@ -13,8 +13,14 @@ body {
     color: white;
 }
 
+/* NAVBAR */
+.navbar {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* HERO */
 .hero {
-    height: 80vh;
+    height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,51 +38,68 @@ body {
     margin-bottom: 20px;
 }
 
+/* BOTONES */
 .btn-custom {
     margin: 10px;
     padding: 12px 25px;
     font-size: 18px;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
+.btn-custom:hover {
+    transform: scale(1.1);
+}
+
+/* CARDS */
 .card {
     border-radius: 15px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .card:hover {
     transform: scale(1.05);
 }
 
+/* SECCIONES */
 .section {
-    padding: 50px 0;
+    padding: 60px 0;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🔝 NAVBAR -->
+<!-- 🔝 NAVBAR CON LOGO -->
 <nav class="navbar navbar-dark bg-dark">
 <div class="container">
-<a class="navbar-brand" href="#">🧭 OrientaT</a>
+
+<a class="navbar-brand d-flex align-items-center" href="index.html">
+    <img src="logo.PNG" width="50" class="me-2" style="border-radius:10px;">
+    <span style="font-weight:600; font-size:1.3rem;">
+        OrientaT
+    </span>
+</a>
 
 <div>
-<a class="btn btn-outline-light me-2" href="areas.html">Áreas</a>
+<a class="btn btn-outline-light me-2" href="areas.html">Areas</a>
 <a class="btn btn-outline-light me-2" href="test.html">Test</a>
 <a class="btn btn-outline-light" href="contacto.html">Contacto</a>
 </div>
+
 </div>
 </nav>
 
 <!-- 🚀 HERO -->
 <div class="hero">
-<h1>Descubre tu vocación</h1>
-<p>Una guía interactiva para ayudarte a elegir tu camino profesional</p>
+<h1>Descubre tu vocacion</h1>
+<p>Una guia interactiva para ayudarte a elegir tu camino profesional</p>
 
 <div>
 <a href="test.html" class="btn btn-light btn-custom">🧠 Hacer Test</a>
-<a href="areas.html" class="btn btn-outline-light btn-custom">📚 Ver Áreas</a>
+<a href="areas.html" class="btn btn-outline-light btn-custom">📚 Ver Areas</a>
+<a href="contacto.html" class="btn btn-success btn-custom">📩 Contacto</a>
 </div>
 </div>
 
@@ -85,25 +108,34 @@ body {
 
 <div class="row text-center">
 
+<!-- TEST -->
 <div class="col-md-4 mb-4">
+<a href="test.html" style="text-decoration:none;">
 <div class="card p-4 shadow text-dark">
 <h4>🧠 Test Vocacional</h4>
-<p>Responde preguntas y descubre qué área se adapta mejor a ti.</p>
+<p>Responde preguntas y descubre que area se adapta mejor a ti.</p>
 </div>
+</a>
 </div>
 
+<!-- AREAS -->
 <div class="col-md-4 mb-4">
+<a href="areas.html" style="text-decoration:none;">
 <div class="card p-4 shadow text-dark">
-<h4>📚 Áreas Profesionales</h4>
+<h4>📚 Areas Profesionales</h4>
 <p>Explora distintas opciones de estudio y carreras disponibles.</p>
 </div>
+</a>
 </div>
 
+<!-- CONTACTO -->
 <div class="col-md-4 mb-4">
+<a href="contacto.html" style="text-decoration:none;">
 <div class="card p-4 shadow text-dark">
 <h4>📩 Contacto</h4>
-<p>Envíanos tus dudas o sugerencias fácilmente.</p>
+<p>Envia tus dudas o sugerencias facilmente.</p>
 </div>
+</a>
 </div>
 
 </div>
@@ -112,7 +144,7 @@ body {
 
 <!-- 🔻 FOOTER -->
 <footer class="bg-dark text-center p-3">
-Proyecto escolar - Orientación Vocacional
+Proyecto escolar - Orientacion Vocacional
 </footer>
 
 </body>
