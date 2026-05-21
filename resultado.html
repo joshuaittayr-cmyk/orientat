@@ -46,126 +46,122 @@ body {
 
 <div id="resultado"></div>
 
-<button class="btn btn-primary mt-4" onclick="reiniciar()">🔄 Volver a intentar</button>
+<!-- BOTONES -->
+<div class="mt-4">
+    <button class="btn btn-primary me-2" onclick="reiniciar()">🔄 Volver a intentar</button>
+    <button class="btn btn-secondary" onclick="inicio()">🏠 Inicio</button>
+</div>
 
 </div>
 
 </div>
 
 <script>
+
 let resultado = localStorage.getItem("resultado");
 
 let contenido = "";
 
 /* TECNOLOGÍA */
 if(resultado === "tecnologia"){
-    contenido = `
-    <div class="emoji">💻🚀</div>
-    <h2>ERES TECNOLOGÍA</h2>
-    <p>Te encanta resolver problemas, usar computadoras y crear soluciones digitales.</p>
+contenido = `
+<div class="emoji">💻🚀</div>
+<h2>ERES TECNOLOGÍA</h2>
+<p>Te gusta la tecnología, resolver problemas y crear cosas digitales.</p>
 
-    <h4>🎓 Carreras recomendadas:</h4>
-    <ul>
-        <li>Ingeniería en Sistemas</li>
-        <li>Desarrollo de Software</li>
-        <li>Ciberseguridad</li>
-    </ul>
-
-    <h4>💡 Consejo:</h4>
-    <p>Empieza creando páginas web o aprendiendo programación.</p>
-    `;
+<h4>🎓 Carreras:</h4>
+<ul>
+<li>Ingeniería en Sistemas</li>
+<li>Software</li>
+<li>Ciberseguridad</li>
+</ul>
+`;
 }
 
 /* SALUD */
 else if(resultado === "salud"){
-    contenido = `
-    <div class="emoji">🏥❤️</div>
-    <h2>ERES SALUD</h2>
-    <p>Tienes vocación de ayudar y te interesa el bienestar de las personas.</p>
+contenido = `
+<div class="emoji">🏥❤️</div>
+<h2>ERES SALUD</h2>
+<p>Te interesa ayudar a las personas y el bienestar.</p>
 
-    <h4>🎓 Carreras recomendadas:</h4>
-    <ul>
-        <li>Medicina</li>
-        <li>Enfermería</li>
-        <li>Psicología</li>
-    </ul>
-
-    <h4>💡 Consejo:</h4>
-    <p>Refuerza biología y química.</p>
-    `;
+<h4>🎓 Carreras:</h4>
+<ul>
+<li>Medicina</li>
+<li>Enfermería</li>
+<li>Psicología</li>
+</ul>
+`;
 }
 
 /* ARTE */
 else if(resultado === "arte"){
-    contenido = `
-    <div class="emoji">🎨✨</div>
-    <h2>ERES ARTE</h2>
-    <p>Eres creativo, te gusta expresarte y crear cosas únicas.</p>
+contenido = `
+<div class="emoji">🎨✨</div>
+<h2>ERES ARTE</h2>
+<p>Eres creativo y te gusta expresarte.</p>
 
-    <h4>🎓 Carreras recomendadas:</h4>
-    <ul>
-        <li>Diseño Gráfico</li>
-        <li>Animación</li>
-        <li>Producción Audiovisual</li>
-    </ul>
-
-    <h4>💡 Consejo:</h4>
-    <p>Practica dibujo y diseño digital.</p>
-    `;
+<h4>🎓 Carreras:</h4>
+<ul>
+<li>Diseño Gráfico</li>
+<li>Animación</li>
+<li>Audiovisual</li>
+</ul>
+`;
 }
 
 /* NEGOCIOS */
 else if(resultado === "negocios"){
-    contenido = `
-    <div class="emoji">💼📈</div>
-    <h2>ERES NEGOCIOS</h2>
-    <p>Tienes habilidades de liderazgo y te interesa el mundo empresarial.</p>
+contenido = `
+<div class="emoji">💼📈</div>
+<h2>ERES NEGOCIOS</h2>
+<p>Tienes habilidades de liderazgo y te interesa emprender.</p>
 
-    <h4>🎓 Carreras recomendadas:</h4>
-    <ul>
-        <li>Administración de Empresas</li>
-        <li>Marketing</li>
-        <li>Contaduría</li>
-    </ul>
-
-    <h4>💡 Consejo:</h4>
-    <p>Aprende sobre emprendimiento y finanzas.</p>
-    `;
+<h4>🎓 Carreras:</h4>
+<ul>
+<li>Administración</li>
+<li>Marketing</li>
+<li>Finanzas</li>
+</ul>
+`;
 }
 
 /* DEPORTES */
 else if(resultado === "deportes"){
-    contenido = `
-    <div class="emoji">🏅💪</div>
-    <h2>ERES DEPORTES</h2>
-    <p>Eres activo, te gusta el movimiento y el esfuerzo físico.</p>
+contenido = `
+<div class="emoji">🏅💪</div>
+<h2>ERES DEPORTES</h2>
+<p>Eres activo y te gusta el esfuerzo físico.</p>
 
-    <h4>🎓 Carreras recomendadas:</h4>
-    <ul>
-        <li>Educación Física</li>
-        <li>Entrenador Deportivo</li>
-        <li>Fisioterapia</li>
-    </ul>
-
-    <h4>💡 Consejo:</h4>
-    <p>Entrena constantemente y aprende sobre el cuerpo humano.</p>
-    `;
+<h4>🎓 Carreras:</h4>
+<ul>
+<li>Educación Física</li>
+<li>Entrenador</li>
+<li>Fisioterapia</li>
+</ul>
+`;
 }
 
-/* DEFAULT (ANTI ERROR) */
+/* SI FALLA */
 else{
-    contenido = `
-    <h2>Error 😅</h2>
-    <p>No se pudo cargar el resultado. Intenta de nuevo.</p>
-    `;
+contenido = `
+<h2>Error 😅</h2>
+<p>Vuelve a hacer el test.</p>
+`;
 }
 
 document.getElementById("resultado").innerHTML = contenido;
 
+/* FUNCIONES */
 function reiniciar(){
     localStorage.clear();
     window.location.href = "test.html";
 }
+
+function inicio(){
+    window.location.href = "index.html";
+}
+
 </script>
 
 </body>
